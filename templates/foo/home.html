@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+
+    {% if user.is_authenticated %}
+        <div>
+            You are logged in as <code>{{ user.username }}</code>!
+        </div>
+        <div>
+            <a href="/logout/">
+                Logout
+            </a>
+        </div>
+    {% else %}
+        <form action="{% url "social:begin" backend="openid" %}" method="post" role="form">{% csrf_token %}
+            <label class="control-label" for="openid_identifier">OpenId Provider:</label>
+            <input class="form-control" id="openid_identifier" type="text" value="" name="openid_identifier" />
+            <input type="submit"/>
+        </form>
+    {% endif %}
+
+
+
+</body>
+</html>
