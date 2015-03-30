@@ -1,5 +1,5 @@
 # OpenIDTest
-A simple django app where you can log in and log out using openid
+A simple django app where you can log in and log out using openid: really just an example for openid using python-social-auth in django.
 
 Setting up
 ------------------
